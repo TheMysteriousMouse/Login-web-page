@@ -1,0 +1,120 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+body{
+    background-image: url('./img/loginBackground.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+header{
+ height: 50px;
+}
+.nav{
+    display: flex;
+    justify-content: end;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif
+}
+li{
+    padding: 30px;
+    list-style: none
+}
+.container{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20% 60% 20%;
+}
+.createAccount{
+    height: 450px;
+    width: 350px;
+    justify-self: end;
+    grid-column: 2/3;
+    grid-row: 2;
+    background-color: #55BC88;
+}
+.createTitle{
+    padding-top: 20px;
+    text-align: center;
+}
+.createDescription {
+    margin: 0px 40px;
+    padding-top: 25px;
+    text-align: center;
+}
+.createBtn{
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    margin-top: 140px;
+    padding: 10px 20px;
+}
+.createBtn:hover{
+    cursor: pointer;
+}
+.signin{
+    grid-column: 3/4;
+    grid-row: 2;
+    height: 450px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    color: #55BC88;
+    margin-left: -10px;
+}
+
+.signTitle{
+    padding-top: 20px;
+    text-align: center;
+}
+.email-block{
+    margin-top: 35px;
+    text-align: left;
+    margin-left: 15%;
+}
+.loginInput{
+    border: 2.2px solid rgba(0, 0, 0, 0.186);
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: 300px;
+    padding: 8px 0px;
+    padding-left: 5px;
+    font-size: 20px;
+}
+.password-block{
+    margin-top: 55px;
+    margin-left: 15%;
+    text-align: left;
+}
+
+.password-block span{
+    padding-left: 100px;
+}
+.password-block h3{
+    display: inline;
+}
+.forgotPassword{
+    color:#55BC88;
+}
+.save-info{
+    padding-top: 10px;
+    text-align: left;
+    margin-left: 15%;
+}
+
+.loginBtn{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 70px;
+    background-color: #55BC88;
+    color: white;
+    margin-top: 20px;
+    margin-left: 30%;
+}
