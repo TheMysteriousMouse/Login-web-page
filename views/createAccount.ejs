@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <title>Create Account</title>
+</head>
+<body class="container-2">
+    <div class="createAccount-cont ">
+        <h1 class="createAccountTitle">Create Account</h1>
+        <form class="createAccountForm" action="" method="POST">
+            <div class="createEmail-block">
+                <h3>Email Address</h3>
+                <input class="createEmailInput" name='email' type="text" placeholder="you@example.com">
+            </div>
+            <div class="createUsername-block">
+                <h3>Username</h3>
+                <input class="createUsernameInput" name='name' type="text" placeholder="Username">
+            </div>
+            <div class="createPassword-block">
+                <h3>Password</h3>
+                <input class="createPasswordInput" name='password' type="text" placeholder="Enter 6 or more character">
+                <h3>Confirm Password</h3>
+                <input class="createPasswordInput" name='passwordConfirm' type="text" placeholder="Enter 6 or more character">
+            </div>
+
+            <button class="createAccountBtn" type="submit">Create Account</button>
+        </form>
+
+    </div>
+    <script src="/js/createAccount.js"></script>
+</body>
+</html>

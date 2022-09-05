@@ -1,7 +1,22 @@
 const express = require('express');
-const userController = require('../model/userController');
-const app = express.Router();
+const userController = require('../controllers/userController');
+const router = express.Router();
 
-app.get('/login', userController.login);
+router
+  .route('/login')
+  .get((req, res, next) => {
+    res.render('login');
+  })
+  .post(userController.login);
 
-module.exports = app;
+router
+  .route('/createAccount')
+  .get((req, res, next) => {
+    res.render('createAccount');
+  })
+  .post(userController.createUser);
+
+router.route('/home').get((req, res, next) => {
+  res.render('home');
+});
+module.exports = router;

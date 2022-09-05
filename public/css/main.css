@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url('./img/loginBackground.jpeg');
+    background-image: url('../img/loginBackground.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -26,6 +26,12 @@ li{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 20% 60% 20%;
+}
+.container-2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 20% 60% 20%;
 }
 .createAccount{
@@ -117,4 +123,76 @@ li{
     color: white;
     margin-top: 20px;
     margin-left: 30%;
+}
+
+.createAccount-cont{
+    justify-self: center;
+    background-color: white;
+    color: #55BC88;
+    height: 550px;
+    width: 400px;
+    border-radius: 10px;
+    grid-column: 2;
+    grid-row: 2;
+}
+.createAccountTitle{
+    text-align: center;
+}
+.createEmail-block{
+    margin-top: 20px;
+    margin-left: 15%;
+    text-align: left;
+}
+.createPassword-block{
+    margin-top: 25px;
+    margin-left: 15%;
+    text-align: left;
+}
+.createEmailInput{
+    border: 2.2px solid rgba(0, 0, 0, 0.186);
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: 300px;
+    padding: 8px 0px;
+    padding-left: 5px;
+    font-size: 20px;
+}
+
+.createUsername-block{
+    margin-top: 25px;
+        margin-left: 15%;
+        text-align: left;
+}
+.createUsernameInput{
+    border: 2.2px solid rgba(0, 0, 0, 0.186);
+        margin-top: 10px;
+        border-radius: 10px;
+        min-width: 300px;
+        padding: 8px 0px;
+        padding-left: 5px;
+        font-size: 20px;
+}
+
+.createPasswordInput{
+    border: 2.2px solid rgba(0, 0, 0, 0.186);
+        margin-top: 10px;
+        border-radius: 10px;
+        min-width: 300px;
+        padding: 8px 0px;
+        padding-left: 5px;
+        font-size: 20px;
+}
+
+
+.createAccountBtn{
+    display: inline-block;
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 70px;
+        background-color: #55BC88;
+        color: white;
+        margin-top: 30px;
+        margin-left: 18%;
 }
