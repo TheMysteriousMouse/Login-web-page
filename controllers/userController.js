@@ -1,4 +1,5 @@
 const User = require('../model/userModel');
+const jwt = require('jsonwebtoken');
 
 exports.login = (req, res, next) => {
   res.render('./index');
@@ -14,10 +15,7 @@ exports.createUser = async (req, res, next) => {
     });
     res.status(200).render('home');
   } catch (err) {
-    res.status(404).json({
-      status: 'Failed',
-      err: err.message,
-    });
+    res.status(400).render('createAccount', { err: err.message });
   }
 };
 
@@ -33,7 +31,7 @@ exports.login = async (req, res, next) => {
     if (!email || !password) {
       throw new Error('Please enter an email or password');
     }
-    const correctPassword = await user.correctPassword(user.password, password);
+    const correctPassword = await user.correctPassword(password, user.password);
 
     if (!correctPassword) {
       throw new Error('Please enter the correct password');
@@ -41,9 +39,8 @@ exports.login = async (req, res, next) => {
 
     res.status(200).render('home');
   } catch (err) {
-    res.status(400).json({
-      status: 'Failed',
-      message: err.message,
-    });
+    res.status(400).render('login', { err: err.message });
   }
 };
+
+exports.protect = async (req, res, next) => {};

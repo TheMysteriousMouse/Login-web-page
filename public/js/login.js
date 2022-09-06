@@ -1,10 +1,11 @@
 const form = document.querySelector('.loginForm');
 
-form.addEventListener('click', (e) => {
+const sendFormData = async () => {
   const payload = new FormData(form);
   const urlEnc = new URLSearchParams(payload);
-  const response = fetch('http://localhost:3000/security/login', {
+  const response = await fetch('http://localhost:3000/security/login', {
     method: 'POST',
     body: urlEnc,
   });
-});
+};
+form.addEventListener('submit', sendFormData);

@@ -11,8 +11,7 @@
     <header>
         <nav>
             <ul class="nav">
-                <li>Login</li>
-                <li>Sign Up</li>
+                <li><a href="createAccount">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -41,10 +40,15 @@
                     <input type="checkbox">
                     <span>Remember Me</span>
                 </div>
+                <% if((typeof err != 'undefined')) {%>
+                    <p class="errorMessage"><%= err %></p>
+                <% } %>
                 <button class="loginBtn" type="submit">Login</button>
         </form>
 
         </div>
     </div>
+    <script src="/js/login.js"></script>
+
 </body>
 </html>
