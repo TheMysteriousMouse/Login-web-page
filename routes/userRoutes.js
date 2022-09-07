@@ -14,9 +14,7 @@ router
   .get((req, res, next) => {
     res.render('createAccount');
   })
-  .post(userController.createUser);
+  .post(userController.auth, userController.createUser);
 
-router.route('/home').get((req, res, next) => {
-  res.render('home');
-});
+router.route('/home').get(userController.home);
 module.exports = router;

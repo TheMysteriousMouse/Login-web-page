@@ -1,8 +1,20 @@
 const User = require('../model/userModel');
 const jwt = require('jsonwebtoken');
 
-exports.login = (req, res, next) => {
-  res.render('./index');
+const createToken = (user, res) => {
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+
+  // Come back and add cookie options
+  res.cookie('jwt', token);
+};
+
+exports.auth = (req, res, next) => {
+  const token = req.cookies.jwt;
+  console.log(token);
+  if (!token) {
+    return res.sendStatus(404);
+  }
+  next();
 };
 
 exports.createUser = async (req, res, next) => {
@@ -13,6 +25,7 @@ exports.createUser = async (req, res, next) => {
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
     });
+    createToken(user, res);
     res.status(200).render('home');
   } catch (err) {
     res.status(400).render('createAccount', { err: err.message });
@@ -36,11 +49,13 @@ exports.login = async (req, res, next) => {
     if (!correctPassword) {
       throw new Error('Please enter the correct password');
     }
-
+    createToken(user);
     res.status(200).render('home');
   } catch (err) {
     res.status(400).render('login', { err: err.message });
   }
 };
 
-exports.protect = async (req, res, next) => {};
+exports.home = (req, res, next) => {
+  res.render('home');
+};
