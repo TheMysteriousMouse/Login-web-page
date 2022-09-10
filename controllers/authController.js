@@ -44,6 +44,7 @@ exports.createUser = async (req, res, next) => {
     createToken(user, res);
     res.status(200).redirect('home');
   } catch (err) {
+    err.message = 'Please make sure all fields are completed';
     res.status(400).render('createAccount', { err: err.message });
   }
 };
@@ -55,7 +56,6 @@ exports.auth = (req, res, next) => {
   }
   try {
     const data = jwt.verify(token, process.env.JWT_SECRET);
-    // Almost done
   } catch {
     return res.render('404');
   }
@@ -68,11 +68,8 @@ exports.login = async (req, res, next) => {
 
     const user = await User.findOne({ email }).select('+password');
 
-    if (!user) {
-      throw new Error('No user found with those credentials');
-    }
     if (!email || !password) {
-      throw new Error('Please enter an email or password');
+      throw new Error('Please enter a valid email or password');
     }
     const correctPassword = await user.correctPassword(password, user.password);
 
@@ -94,12 +91,13 @@ exports.checkEmail = async (req, res, next) => {
       message: 'Email Sent',
     };
     if (!user) {
-      err.message = "User doesn't exists";
+      throw new Error('That email does not exist');
     }
 
     await sendEmailToken(user, res);
     res.status(200).render('forgotPassword', { err: err.message });
   } catch (err) {
+    err.message = 'Something went wrong';
     res.status(404).render('forgotPassword', { err: err.message });
   }
 };
