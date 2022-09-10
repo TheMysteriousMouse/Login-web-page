@@ -9,6 +9,9 @@ body{
     background-size: cover;
     color: white;
 }
+ul a{
+    color:white;
+}
 header{
  height: 50px;
 }
