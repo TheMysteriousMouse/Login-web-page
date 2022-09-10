@@ -16,5 +16,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(express.json());
 app.use('/security', userRoutes);
-
+app.use((req, res, next) => {
+  res.status(404).render('404');
+});
 module.exports = app;

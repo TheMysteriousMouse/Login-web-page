@@ -57,7 +57,7 @@ exports.auth = (req, res, next) => {
     const data = jwt.verify(token, process.env.JWT_SECRET);
     // Almost done
   } catch {
-    return res.sendStatus(403);
+    return res.render('404');
   }
   next();
 };
