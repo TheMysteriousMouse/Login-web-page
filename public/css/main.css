@@ -9,21 +9,27 @@ body{
     background-size: cover;
     color: white;
 }
-ul a{
-    color:white;
-}
+
 header{
  height: 50px;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
 }
 .nav{
     display: flex;
     justify-content: end;
     font-size: 25px;
-    font-family:Arial, Helvetica, sans-serif
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
 }
 li{
     padding: 30px;
     list-style: none
+
 }
 .container{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -204,4 +210,15 @@ li{
     color: red;
     font-size: 14px;
     text-align: center;
+}
+
+.forgotPassword-cont{
+    justify-self: center;
+        background-color: white;
+        color: #55BC88;
+        height: 300px;
+        width: 400px;
+        border-radius: 10px;
+        grid-column: 2;
+        grid-row: 2;
 }
